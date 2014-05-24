@@ -63,3 +63,5 @@ If you're getting someone else's code or sharing this project via git, you must 
 6. Always test your application to make sure everything works before you push a new change (or you'll have a shitty time later). 
 7. Master branch should ALWAYS be functional. If you break master, you're in for a lot of pain by your collaborators. (people branch off of master to make changes. it should always work!)
 8. If you have questions about git, ask right away before you break things. 
+
+### NOW MAKE HELLO WORLD!
