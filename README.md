@@ -27,6 +27,39 @@ Setting up a git repository for android studio projects
 3. Give it a description
 4. Initialize with README
 5. Give it a .gitignore (Android)
+6. Create
+7. Edit the .gitignore in the repository
+8. Add .idea/
+9. Add *.iml
+10. Commit
 
 ###Project initialization in github repository
-1. 
+1. Terminal > Go to your local top-level project folder
+2. git init
+3. git remote add origin [github repo HTTPS clone url]
+4. rm .gitignore #replacing the android's .gitignore with ours
+5. git pull origin master
+6. git add . # or git add -A
+7. git commit -m "android studio project initialization" # Or whatever you want your message to be. these are important.
+8. git push -u origin master
+
+###Importing the project from a git repository
+If you're getting someone else's code or sharing this project via git, you must import the project when opening it for the first time.
+1. git clone [Github Repo HTTPS clone url]
+2. Open Android Studio
+3. Import Project ...
+4. Navigate to the right directory
+5. Select on the build.gradle in the top-level directory
+6. And go! 
+7. This sets up the local configurations files for you based on gradle and the project structure. (the things we gitignored)
+
+
+### You're all set!
+1. Remember your Gitiquette (Git Etiquette)
+2. Add files individually based on what feature you worked on / changed
+3. Commit them with useful messages detailing what you did for reference
+4. Make use of git status as much as you can to make sure you know what git things are going on
+5. Make use of separate branches for major changes. git checkout -b [new branch for new feature]. Make pull-requests back to master after testing.
+6. Always test your application to make sure everything works before you push a new change (or you'll have a shitty time later). 
+7. Master branch should ALWAYS be functional. If you break master, you're in for a lot of pain by your collaborators. (people branch off of master to make changes. it should always work!)
+8. If you have questions about git, ask right away before you break things. 
