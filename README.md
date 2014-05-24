@@ -65,3 +65,4 @@ If you're getting someone else's code or sharing this project via git, you must 
 8. If you have questions about git, ask right away before you break things. 
 
 ### NOW MAKE HELLO WORLD!
+The model-view-controller framework in [Android](http://stackoverflow.com/a/12139782)
