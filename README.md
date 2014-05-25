@@ -45,6 +45,7 @@ Setting up a git repository for android studio projects
 
 ###Importing the project from a git repository
 If you're getting someone else's code or sharing this project via git, you must import the project when opening it for the first time.
+
 1. git clone [Github Repo HTTPS clone url]
 2. Open Android Studio
 3. Import Project ...
