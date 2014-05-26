@@ -66,4 +66,12 @@ If you're getting someone else's code or sharing this project via git, you must 
 8. If you have questions about git, ask right away before you break things. 
 
 ### NOW MAKE HELLO WORLD!
-The model-view-controller framework in [Android](http://stackoverflow.com/a/12139782)
+We will be going over the pseudo-model-view-controller framework for [Android](http://stackoverflow.com/a/12139782) on the first day of class. You'll need to understand how that works.
+
+1. Take a look at your res (resources) folder. It contains the XMLs you will be using to provide content and layout to the app. 
+2. Take a look at your src (source) folder. It contains the java classes that take care of the logic behind the app. 
+3. Make sure you understand how "hello world" is being displayed in the generated code. 
+4. Add an OnClick functionality to the "hello world" text. 
+5. Add an ActionBar menu button that updates UI Elements in some way. 
+6. Once you're done, take a look at this repository's app. (git clone and android import build.gradle) 
+7. This code has basic structure of what the app should look like as well as comments for what lines of code do. It also demonstrates a standard oragnization of code. It will save you lots of pain if you follow some organization in coding Android apps (Java in general). Files will grow disgustingly long and chaotic otherwise.
