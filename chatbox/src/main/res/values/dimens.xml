@@ -5,6 +5,10 @@
 
     <!-- MainActivity ListView -->
     <dimen name = "main_listview_divider">2dp</dimen>
+    <dimen name = "item_name_top">5dp</dimen>
+    <dimen name = "item_profile_border">1dp</dimen>
+    <dimen name = "item_profile_right">8dp</dimen>
+    <dimen name = "item_profile_name">20sp</dimen>
     <!-- Text Sizes -->
 
 </resources>

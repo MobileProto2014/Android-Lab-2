@@ -3,5 +3,8 @@
     <!-- Application Level -->
     <string name="app_name">MobProto ChatBox!</string>
 
+    <!-- ChatItem Layout -->
+    <string name="item_profile_pic">Profile Picture</string>
+    <string name="item_default_name">Student</string>
 
 </resources>
