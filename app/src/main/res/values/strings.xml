@@ -3,6 +3,7 @@
 
     <string name="app_name">My Application 2</string>
     <string name="hello_world">Hello world!</string>
+    <string name="goodbye_world">Goodbye world!</string>
     <string name="action_settings">Settings</string>
 
 </resources>
