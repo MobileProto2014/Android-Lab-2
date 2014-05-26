@@ -39,12 +39,13 @@ public class MainActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()){
             case R.id.menu_settings:
+                // Do nothing
                 return true;
 
             case R.id.menu_blowUp:
-                findViewById(R.id.main_boom_text).setVisibility(View.VISIBLE);
-                ((TextView) findViewById(R.id.main_hello_text)).setText(getString(R.string.main_fix_text));
-
+                findViewById(R.id.main_boom_text).setVisibility(View.VISIBLE); //Show the boom text
+                ((TextView) findViewById(R.id.main_hello_text)).setText(getString(R.string.main_fix_text)); //Change the hello world text to Fix it!
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
