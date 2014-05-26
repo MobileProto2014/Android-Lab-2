@@ -37,10 +37,6 @@ public class MainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()){
-            case R.id.menu_settings:
-                // Do nothing
-                return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
