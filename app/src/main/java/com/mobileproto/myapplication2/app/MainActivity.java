@@ -20,8 +20,7 @@ public class MainActivity extends Activity {
     }
 
     private void setupViews(){
-        TextView text = (TextView) findViewById(R.id.main_hello_text); //Find the TextView from the ContentView by ID.
-        text.setOnClickListener(OnClickListeners.getHelloWorldListener(this)); //Set OnClick Listener for TextView click functionality
+
     }
 
 
@@ -42,10 +41,6 @@ public class MainActivity extends Activity {
                 // Do nothing
                 return true;
 
-            case R.id.menu_blowUp:
-                findViewById(R.id.main_boom_text).setVisibility(View.VISIBLE); //Show the boom text
-                ((TextView) findViewById(R.id.main_hello_text)).setText(getString(R.string.main_fix_text)); //Change the hello world text to Fix it!
-                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

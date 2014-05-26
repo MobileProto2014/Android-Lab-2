@@ -5,8 +5,4 @@
         android:title="@string/menu_settings"
         android:orderInCategory="100"
         android:showAsAction="never" />
-    <item android:id="@+id/menu_blowUp"
-        android:title="@string/menu_boom"
-        android:orderInCategory="100"
-        android:showAsAction="always"/>
 </menu>
