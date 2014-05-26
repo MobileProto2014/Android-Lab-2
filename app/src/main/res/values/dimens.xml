@@ -3,6 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <!-- MainActivity ListView -->
+    <dimen name = "main_listview_divider">2dp</dimen>
     <!-- Text Sizes -->
 
 </resources>
