@@ -10,9 +10,19 @@
 
     <TextView
         android:id = "@+id/main_hello_text"
-        android:text="@string/hello_world"
+        android:text="@string/main_hello_world"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"/>
+
+    <TextView
+        android:id = "@+id/main_boom_text"
+        android:layout_below = "@id/main_hello_text"
+        android:text="@string/main_boom_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/main_boom_textSize"
+        android:visibility="invisible"
         android:clickable="true"/>
 
 </RelativeLayout>
