@@ -3,6 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
+
     <RelativeLayout
         android:layout_weight=".20"
         android:layout_width="0dp"
@@ -17,6 +18,7 @@
             android:padding="@dimen/item_profile_border"
             android:background="@drawable/item_default_profile"/>
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="0dp"
         android:layout_weight=".75"
@@ -29,6 +31,25 @@
             android:fontFamily="sans-serif-light"
             android:text="@string/item_default_name"
             android:textSize="@dimen/item_profile_name"/>
+        <TextView
+            android:id="@+id/item_chat_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_profile_name"
+            android:textSize = "@dimen/item_chat_body"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:text="Sample Text"
+            />
+        <TextView
+            android:id="@+id/item_chat_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/item_profile_name"
+            android:layout_marginRight="@dimen/item_time_right"
+            android:layout_alignParentRight="true"
+            android:textSize="@dimen/item_chat_time"
+            android:text="Sample Date"/>
     </RelativeLayout>
 
 </LinearLayout>

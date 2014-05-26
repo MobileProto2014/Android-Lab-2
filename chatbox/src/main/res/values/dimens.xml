@@ -8,7 +8,11 @@
     <dimen name = "item_name_top">5dp</dimen>
     <dimen name = "item_profile_border">1dp</dimen>
     <dimen name = "item_profile_right">8dp</dimen>
-    <dimen name = "item_profile_name">20sp</dimen>
+    <dimen name = "item_time_right">14dp</dimen>
+
     <!-- Text Sizes -->
+    <dimen name = "item_profile_name">24sp</dimen>
+    <dimen name = "item_chat_body">12sp</dimen>
+    <dimen name = "item_chat_time">12sp</dimen>
 
 </resources>
