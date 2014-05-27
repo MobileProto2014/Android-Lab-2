@@ -3,6 +3,12 @@
     <!-- Application Level -->
     <string name="app_name">MobProto ChatBox!</string>
 
+    <!-- Menu Labels -->
+    <string name="menu_username">Username</string>
+
+    <!--MainActivity -->
+    <string name="main_button_text">Send</string>
+
     <!-- ChatItem Layout -->
     <string name="item_profile_pic">Profile Picture</string>
     <string name="item_default_name">Student</string>
