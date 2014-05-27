@@ -9,4 +9,10 @@ For the purpose of this lab, you simply need to implement a ListView that dynami
 
 
 _Requirements for this Lab:_
-1. 
+
+1.  Use of UI Elements like TextView, Button, ImageView, EditText, and more.
+2.  Using a ListView
+3.  Dynamically updating the ListView based on user interaction with UI elements
+4.  Use of a menu action item
+5.  Change the application launcher icon. This [site](http://romannurik.github.io/AndroidAssetStudio/) is useful.
+6.  Nice and polished code and UI
