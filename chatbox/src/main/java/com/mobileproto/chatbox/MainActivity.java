@@ -13,10 +13,24 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 
 public class MainActivity extends Activity {
+    //While Profile Pictures are not implemented
+    public static HashMap<String, Integer> userColors = new HashMap<String, Integer>();
+    public static List<Integer> colors = Arrays.asList(android.R.color.holo_blue_light,
+                                            android.R.color.holo_green_light,
+                                            android.R.color.holo_orange_light,
+                                            android.R.color.holo_purple,
+                                            android.R.color.holo_red_light,
+                                            android.R.color.holo_blue_bright,
+                                            android.R.color.holo_green_dark,
+                                            android.R.color.holo_orange_dark,
+                                            android.R.color.holo_red_dark,
+                                            android.R.color.holo_blue_dark);
+
     //List of chats
     AdapterChat chatAdapter;
 
@@ -29,8 +43,15 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); //Sets this activity's content view to the activity_main.xml layout
 
+        //Setup colors
+        addNewUser(username);
+
         getChats();
         setupViews(); //Sets up views in this content view.
+    }
+
+    public static void addNewUser(String username){
+        userColors.put(username, colors.get(userColors.size() % colors.size()));
     }
 
     private void setupViews(){

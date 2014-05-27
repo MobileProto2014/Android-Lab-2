@@ -37,6 +37,7 @@ public class AdapterChat extends ArrayAdapter {
     private class ChatHolder {
         TextView name, body, time;
         ImageView picture;
+        View background;
     }
 
     @Override
@@ -52,6 +53,7 @@ public class AdapterChat extends ArrayAdapter {
         holder.time = (TextView) view.findViewById(R.id.item_chat_time);
 
         //ImageViews
+        holder.background = view.findViewById(R.id.item_profile_background);
         holder.picture = (ImageView) view.findViewById(R.id.item_profile_picture);
         fillViews(holder, chats.get(position));
         return view;
@@ -67,6 +69,7 @@ public class AdapterChat extends ArrayAdapter {
         holder.body.setText(chat.body);
         holder.time.setText(formatTime(chat.time));
 
+        holder.background.setBackgroundColor(MainActivity.userColors.get(chat.sender));
         //holder.picture.setImageDrawable(getProfileDrawable(chat.userId));
     }
 

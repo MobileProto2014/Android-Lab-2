@@ -40,12 +40,16 @@ public class OnClickListeners {
                 .setPositiveButton("Save", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if (input.getText().toString().equals("")) {
+                        String newName = input.getText().toString();
+                        if (newName.equals("")) {
                             Toast.makeText(activity, "Your username can't be blank!", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        MainActivity.username = input.getText().toString();
-                        Toast.makeText(activity, "Your username is now " + MainActivity.username, Toast.LENGTH_SHORT).show();
+                        MainActivity.username = newName;
+                        Toast.makeText(activity, "Your username is now " + newName, Toast.LENGTH_SHORT).show();
+                        if (!MainActivity.userColors.containsKey(newName)){
+                            MainActivity.addNewUser(newName);
+                        }
                         dialogInterface.dismiss();
                     }
                 })
