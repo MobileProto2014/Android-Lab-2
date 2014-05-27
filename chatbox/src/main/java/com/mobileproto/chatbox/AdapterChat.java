@@ -3,6 +3,7 @@ package com.mobileproto.chatbox;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,25 +42,24 @@ public class AdapterChat extends ArrayAdapter {
     @Override
     public View getView(int position, View view, ViewGroup parent){
         ChatHolder holder;
-        if (view == null) {
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(resource, parent, false);
-            holder = new ChatHolder();
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        view = inflater.inflate(resource, parent, false);
+        holder = new ChatHolder();
 
-            //TextViews
-            holder.name = (TextView) view.findViewById(R.id.item_profile_name);
-            holder.body = (TextView) view.findViewById(R.id.item_chat_body);
-            holder.time = (TextView) view.findViewById(R.id.item_chat_time);
+        //TextViews
+        holder.name = (TextView) view.findViewById(R.id.item_profile_name);
+        holder.body = (TextView) view.findViewById(R.id.item_chat_body);
+        holder.time = (TextView) view.findViewById(R.id.item_chat_time);
 
-            //ImageViews
-            holder.picture = (ImageView) view.findViewById(R.id.item_profile_picture);
-        } else {
-            holder = (ChatHolder) view.getTag();
-        }
-
+        //ImageViews
+        holder.picture = (ImageView) view.findViewById(R.id.item_profile_picture);
         fillViews(holder, chats.get(position));
-
         return view;
+    }
+
+    @Override
+    public int getCount(){
+        return this.chats.size();
     }
 
     private void fillViews(ChatHolder holder, ModelChat chat){
@@ -72,9 +72,9 @@ public class AdapterChat extends ArrayAdapter {
 
     private String formatTime(long time){
         if (DateUtils.isToday(time)){
-            return new SimpleDateFormat("HH:mm a").format(new Date(time));
+            return new SimpleDateFormat("hh:mm:ss a").format(new Date(time));
         }
-        return new SimpleDateFormat("MM/DD, HH:mm a").format(new Date(time));
+        return new SimpleDateFormat("MM/DD, hh:mm:ss a").format(new Date(time));
     }
 
     private Drawable getProfileDrawable(String id){
@@ -83,12 +83,11 @@ public class AdapterChat extends ArrayAdapter {
 
     public void addChats(List<ModelChat> newChats){
         this.chats.addAll(newChats);
-        Collections.sort(this.chats);
         notifyDataSetChanged();
     }
 
     public void addChat(ModelChat chat){
-        this.chats.add(0, chat);
+        this.chats.add(chat);
         notifyDataSetChanged();
     }
 }

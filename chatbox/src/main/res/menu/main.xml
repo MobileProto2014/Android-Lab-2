@@ -9,5 +9,5 @@
         android:title="@string/menu_username"
         android:orderInCategory="100"
         android:showAsAction="always"
-        android:icon="@drawable/item_default_profile"/>
+        android:icon="@drawable/menu_username"/>
 </menu>

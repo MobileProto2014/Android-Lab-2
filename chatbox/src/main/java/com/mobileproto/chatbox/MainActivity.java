@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,18 +37,16 @@ public class MainActivity extends Activity {
         ListView chatList = (ListView) findViewById(R.id.main_chat_list);
         chatList.setAdapter(chatAdapter);
 
-        EditText input = (EditText) findViewById(R.id.main_chat_input);
+        final EditText input = (EditText) findViewById(R.id.main_chat_input);
+        input.clearFocus();
 
         Button sendButton = (Button) findViewById(R.id.main_chat_button);
-        sendButton.setOnClickListener(OnClickListeners.sendButtonListener(input, chatAdapter));
+        sendButton.setOnClickListener(OnClickListeners.sendButtonListener(this,chatAdapter));
     }
 
     private void getChats(){
-        List<ModelChat> newChats = Arrays.asList(
-                new ModelChat(username, "Hello World!", userId),
-                new ModelChat(username, "How are you?", userId)
-        );
-        Log.i("Debug", "Entered getChats()");
+        //Use content provider in the future
+        List<ModelChat> newChats = new ArrayList<ModelChat> ();
         if (chatAdapter == null)
             chatAdapter = new AdapterChat(this, new ArrayList<ModelChat>(), R.layout.chatitem_main);
         chatAdapter.addChats(newChats);
