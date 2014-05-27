@@ -4,12 +4,15 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ListView;
-import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends Activity {
+    //List of chats
+    List<ModelChat> chats = new ArrayList<ModelChat>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +23,7 @@ public class MainActivity extends Activity {
     }
 
     private void setupViews(){
+        ListView chatList = (ListView) findViewById(R.id.main_chat_list);
 
     }
 
