@@ -66,7 +66,7 @@ public class MainActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()){
             case R.id.menu_change_username:
-                //To-do
+                OnClickListeners.changeUsernameListener(this);
             default:
                 return super.onOptionsItemSelected(item);
         }
