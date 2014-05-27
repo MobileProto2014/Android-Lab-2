@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -17,7 +19,8 @@ public class MainActivity extends Activity {
     AdapterChat chatAdapter;
 
     //User Logistics
-    String username;
+    public static String username = "default";
+    public static String userId = "0001";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +34,17 @@ public class MainActivity extends Activity {
     private void setupViews(){
         ListView chatList = (ListView) findViewById(R.id.main_chat_list);
         chatList.setAdapter(chatAdapter);
+
+        EditText input = (EditText) findViewById(R.id.main_chat_input);
+
+        Button sendButton = (Button) findViewById(R.id.main_chat_button);
+        sendButton.setOnClickListener(OnClickListeners.sendButtonListener(input, chatAdapter));
     }
 
     private void getChats(){
         List<ModelChat> newChats = Arrays.asList(
-                new ModelChat("Chris", "Hello World!", "epicid"),
-                new ModelChat("Chris", "How are you?", "epicid")
+                new ModelChat(username, "Hello World!", userId),
+                new ModelChat(username, "How are you?", userId)
         );
         Log.i("Debug", "Entered getChats()");
         if (chatAdapter == null)

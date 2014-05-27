@@ -4,7 +4,7 @@
     <string name="app_name">MobProto ChatBox!</string>
 
     <!-- Menu Labels -->
-    <string name="menu_username">Username</string>
+    <string name="user">Username</string>
 
     <!--MainActivity -->
     <string name="main_button_text">Send</string>

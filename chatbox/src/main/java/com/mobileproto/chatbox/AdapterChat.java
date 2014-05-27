@@ -86,4 +86,9 @@ public class AdapterChat extends ArrayAdapter {
         Collections.sort(this.chats);
         notifyDataSetChanged();
     }
+
+    public void addChat(ModelChat chat){
+        this.chats.add(0, chat);
+        notifyDataSetChanged();
+    }
 }

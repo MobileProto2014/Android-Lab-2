@@ -16,6 +16,6 @@ public class ModelChat implements Comparable {
 
     @Override
     public int compareTo(Object object) {
-        return (time < ((ModelChat) object).time)?0:1;
+        return (time < ((ModelChat) object).time)?1:0;
     }
 }
