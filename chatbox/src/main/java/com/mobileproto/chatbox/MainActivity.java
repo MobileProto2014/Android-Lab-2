@@ -20,7 +20,8 @@ import java.util.List;
 public class MainActivity extends Activity {
     //While Profile Pictures are not implemented
     public static HashMap<String, Integer> userColors = new HashMap<String, Integer>();
-    public static List<Integer> colors = Arrays.asList(android.R.color.holo_blue_light,
+    public static List<Integer> colors = Arrays.asList(android.R.color.darker_gray,
+                                            android.R.color.holo_blue_light,
                                             android.R.color.holo_green_light,
                                             android.R.color.holo_orange_light,
                                             android.R.color.holo_purple,
@@ -45,6 +46,9 @@ public class MainActivity extends Activity {
 
         //Setup colors
         addNewUser(username);
+        if (username.equals("default")){
+            Toast.makeText(this, "You are signed in as default! Click the user icon to change your name!", Toast.LENGTH_SHORT).show();
+        }
 
         getChats();
         setupViews(); //Sets up views in this content view.
@@ -62,6 +66,7 @@ public class MainActivity extends Activity {
         input.clearFocus();
 
         Button sendButton = (Button) findViewById(R.id.main_chat_button);
+        sendButton.setBackgroundResource(MainActivity.userColors.get(username));
         sendButton.setOnClickListener(OnClickListeners.sendButtonListener(this,chatAdapter));
     }
 

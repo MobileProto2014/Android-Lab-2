@@ -50,6 +50,7 @@ public class OnClickListeners {
                         if (!MainActivity.userColors.containsKey(newName)){
                             MainActivity.addNewUser(newName);
                         }
+                        activity.findViewById(R.id.main_chat_button).setBackgroundResource(MainActivity.userColors.get(MainActivity.username));
                         dialogInterface.dismiss();
                     }
                 })

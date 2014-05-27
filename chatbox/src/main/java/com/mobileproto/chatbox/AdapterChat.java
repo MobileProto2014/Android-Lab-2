@@ -69,7 +69,7 @@ public class AdapterChat extends ArrayAdapter {
         holder.body.setText(chat.body);
         holder.time.setText(formatTime(chat.time));
 
-        holder.background.setBackgroundColor(MainActivity.userColors.get(chat.sender));
+        holder.background.setBackgroundResource(MainActivity.userColors.get(chat.sender));
         //holder.picture.setImageDrawable(getProfileDrawable(chat.userId));
     }
 
