@@ -1,12 +1,16 @@
-package com.mobileproto.chatbox;
+package com.mobileproto.chatbox.listeners;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.mobileproto.chatbox.MainActivity;
+import com.mobileproto.chatbox.R;
+import com.mobileproto.chatbox.adapters.ChatAdapter;
+import com.mobileproto.chatbox.models.Chat;
 
 /**
  * Created by clee2 on 5/26/2014.
@@ -16,7 +20,7 @@ public class OnClickListeners {
      * MainActivity OnClickListeners
      */
 
-    public static View.OnClickListener sendButtonListener(final Activity activity, final AdapterChat adapter){
+    public static View.OnClickListener sendButtonListener(final Activity activity, final ChatAdapter adapter){
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -25,7 +29,7 @@ public class OnClickListeners {
                     Toast.makeText(activity, "You didn't type anything in!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                adapter.addChat(new ModelChat(MainActivity.username, input.getText().toString(), MainActivity.userId));
+                adapter.addChat(new Chat(MainActivity.username, input.getText().toString(), MainActivity.userId));
                 input.setText("");
             };
         };

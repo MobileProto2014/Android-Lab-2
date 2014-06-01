@@ -1,9 +1,8 @@
-package com.mobileproto.chatbox;
+package com.mobileproto.chatbox.adapters;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.format.DateUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,22 +10,24 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.mobileproto.chatbox.MainActivity;
+import com.mobileproto.chatbox.R;
+import com.mobileproto.chatbox.models.Chat;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
 /**
  * Created by clee2 on 5/26/2014.
  */
-public class AdapterChat extends ArrayAdapter {
-    private List<ModelChat> chats = new ArrayList<ModelChat>();
+public class ChatAdapter extends ArrayAdapter {
+    private List<Chat> chats = new ArrayList<Chat>();
     private int resource;
     private Context context;
 
-    public AdapterChat(Context context, List<ModelChat> chats, int resource) {
+    public ChatAdapter(Context context, List<Chat> chats, int resource) {
         super(context, R.layout.chatitem_main);
         this.context = context;
         this.resource = resource;
@@ -64,7 +65,7 @@ public class AdapterChat extends ArrayAdapter {
         return this.chats.size();
     }
 
-    private void fillViews(ChatHolder holder, ModelChat chat){
+    private void fillViews(ChatHolder holder, Chat chat){
         holder.name.setText(chat.sender);
         holder.body.setText(chat.body);
         holder.time.setText(formatTime(chat.time));
@@ -84,12 +85,12 @@ public class AdapterChat extends ArrayAdapter {
         return null;
     }
 
-    public void addChats(List<ModelChat> newChats){
+    public void addChats(List<Chat> newChats){
         this.chats.addAll(newChats);
         notifyDataSetChanged();
     }
 
-    public void addChat(ModelChat chat){
+    public void addChat(Chat chat){
         this.chats.add(chat);
         notifyDataSetChanged();
     }

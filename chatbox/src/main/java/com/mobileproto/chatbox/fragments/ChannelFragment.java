@@ -1,4 +1,4 @@
-package com.mobileproto.chatbox;
+package com.mobileproto.chatbox.fragments;
 
 
 import android.content.Context;
@@ -11,15 +11,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.mobileproto.chatbox.MainActivity;
+import com.mobileproto.chatbox.R;
+import com.mobileproto.chatbox.adapters.ChatAdapter;
+import com.mobileproto.chatbox.listeners.OnClickListeners;
+import com.mobileproto.chatbox.models.Chat;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by clee2 on 5/31/2014.
  */
-public class FragmentChannel extends Fragment {
+public class ChannelFragment extends Fragment {
     //List of chats
-    AdapterChat chatAdapter;
+    ChatAdapter chatAdapter;
 
     //Context from activity
     Context context;
@@ -47,15 +53,15 @@ public class FragmentChannel extends Fragment {
 
         Button sendButton = (Button) v.findViewById(R.id.main_chat_button);
         sendButton.setBackgroundResource(MainActivity.userColors.get(MainActivity.username));
-        sendButton.setOnClickListener(OnClickListeners.sendButtonListener(getActivity(),chatAdapter));
+        sendButton.setOnClickListener(OnClickListeners.sendButtonListener(getActivity(), chatAdapter));
         return v;
     }
 
     private void getChats(){
         //Use content provider in the future
-        List<ModelChat> newChats = new ArrayList<ModelChat>();
+        List<Chat> newChats = new ArrayList<Chat>();
         if (chatAdapter == null)
-            chatAdapter = new AdapterChat(context, new ArrayList<ModelChat>(), R.layout.chatitem_main);
+            chatAdapter = new ChatAdapter(context, new ArrayList<Chat>(), R.layout.chatitem_main);
         chatAdapter.addChats(newChats);
     }
 }

@@ -1,17 +1,19 @@
 package com.mobileproto.chatbox;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.mobileproto.chatbox.listeners.OnClickListeners;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends Activity {
     //While Profile Pictures are not implemented
     public static HashMap<String, Integer> userColors = new HashMap<String, Integer>();
     public static List<Integer> colors = Arrays.asList(android.R.color.darker_gray,
