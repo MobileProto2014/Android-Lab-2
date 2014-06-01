@@ -5,6 +5,8 @@ package com.mobileproto.chatbox.models;
  */
 public class Channel {
     private String id, name;
+    private long lastUpdated, timeCreated;
+
     public Channel(String id, String name){
         this.id = id;
         this.name = name;
