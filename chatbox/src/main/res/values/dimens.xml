@@ -16,5 +16,6 @@
     <dimen name = "item_profile_name">24sp</dimen>
     <dimen name = "item_chat_body">16sp</dimen>
     <dimen name = "item_chat_time">12sp</dimen>
-
+    <dimen name = "text_channel_recent">14sp</dimen>
+    <dimen name = "text_channel_title">12sp</dimen>
 </resources>

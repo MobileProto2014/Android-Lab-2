@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * Created by clee2 on 5/31/2014.
  */
-public class ChannelFragment extends Fragment {
+public class ChatFragment extends Fragment {
     //List of chats
     ChatAdapter chatAdapter;
 

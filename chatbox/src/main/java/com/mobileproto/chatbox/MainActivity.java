@@ -2,18 +2,23 @@ package com.mobileproto.chatbox;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.mobileproto.chatbox.fragments.ChatFragment;
+import com.mobileproto.chatbox.fragments.HomeFragment;
 import com.mobileproto.chatbox.listeners.OnClickListeners;
+import com.mobileproto.chatbox.models.Channel;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
     //While Profile Pictures are not implemented
     public static HashMap<String, Integer> userColors = new HashMap<String, Integer>();
     public static List<Integer> colors = Arrays.asList(android.R.color.darker_gray,
@@ -32,6 +37,10 @@ public class MainActivity extends Activity {
     public static String username = "default";
     public static String userId = "0001";
 
+    //Fragments
+    private HomeFragment home;
+    HashMap<String, ChatFragment> channelFragments = new HashMap<String, ChatFragment>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,11 +50,34 @@ public class MainActivity extends Activity {
         if (MainActivity.username.equals("default")){
             Toast.makeText(this, "You are signed in as default! Click the user icon to change your name!", Toast.LENGTH_SHORT).show();
         }
+        //Setup Home Page
+        initialUISetup();
     }
 
+    public void initialUISetup(){
+        home = new HomeFragment();
+        getSupportFragmentManager().beginTransaction()
+                            .add(R.id.main_home_fragment, home).commit();
+    }
 
     public static void addNewUser(String username){
         userColors.put(username, colors.get(userColors.size() % colors.size()));
+    }
+
+    public static List<Channel> getChannelsForUser(String userID){
+        List<Channel> hardcoded = new ArrayList<Channel>();
+        hardcoded.add(new Channel("0001000", "Hardcoded Channel"));
+        return hardcoded;
+    }
+
+    public void goToChannelFragment(String channelID){
+        if (channelFragments.containsKey(channelID)){
+            getSupportFragmentManager().beginTransaction().add(channelFragments.get(channelID), channelID).commit();
+        } else {
+            ChatFragment newChannel = new ChatFragment();
+            channelFragments.put(channelID, newChannel);
+            getSupportFragmentManager().beginTransaction().add(newChannel, channelID).commit();
+        }
     }
 
     @Override

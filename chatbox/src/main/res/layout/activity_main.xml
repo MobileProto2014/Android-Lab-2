@@ -5,9 +5,16 @@
     android:focusableInTouchMode="true"
     tools:context="com.mobileproto.myapplication2.chatbox.MainActivity">
 
-    <ListView
-        android:id="@+id/main_channels"
+    <fragment
+        android:id="@+id/main_home_fragment"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"/>
+        android:layout_height="fill_parent"
+        android:name="com.mobileproto.chatbox.fragments.HomeFragment" />
+
+    <fragment
+        android:id="@+id/main_channel_fragment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:name="com.mobileproto.chatbox.fragments.ChatFragment" />
 
 </RelativeLayout>
