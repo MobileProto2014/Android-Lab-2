@@ -1,5 +1,6 @@
 package com.mobileproto.chatbox.fragments;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +18,13 @@ import com.mobileproto.chatbox.models.Channel;
  * Created by clee2 on 6/1/2014.
  */
 public class HomeFragment extends Fragment {
+    MainActivity activity;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        this.activity = (MainActivity) activity;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,7 +39,7 @@ public class HomeFragment extends Fragment {
         channelList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                ((MainActivity)getActivity()).goToChannelFragment(((Channel)view.getTag()).getId());
+                activity.goToChannelFragment(((Channel)view.getTag()).getId());
             }
         });
         return v;
