@@ -37,6 +37,7 @@ public class MainActivity extends Activity {
     }
 
     public void initialUISetup(){
+        //Load and show the HomeFragment
         getFragmentManager().beginTransaction()
                             .add(R.id.fragment_container, new HomeFragment()).commit();
     }

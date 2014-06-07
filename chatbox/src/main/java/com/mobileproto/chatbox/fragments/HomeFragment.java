@@ -18,12 +18,14 @@ import com.mobileproto.chatbox.models.Channel;
  * Created by clee2 on 6/1/2014.
  */
 public class HomeFragment extends Fragment {
-    MainActivity activity;
+    private MainActivity activity;
+    private ChannelAdapter adapter;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        this.activity = (MainActivity) activity;
+        this.activity = (MainActivity) activity; //Grab reference to the activity as soon as fragment attaches to the activity
+        adapter = new ChannelAdapter(activity); //Prepare the channel adapter
     }
 
     @Override
@@ -35,11 +37,11 @@ public class HomeFragment extends Fragment {
 
     private View fillChannels(View v){
         ListView channelList = (ListView) v.findViewById(R.id.fragment_home_channel_list);
-        channelList.setAdapter(new ChannelAdapter(getActivity(), R.layout.channelitem_main));
+        channelList.setAdapter(adapter);
         channelList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                activity.goToChannelFragment(((Channel)view.getTag()).getId());
+                activity.goToChannelFragment(adapter.getItem(i).getId());
             }
         });
         return v;

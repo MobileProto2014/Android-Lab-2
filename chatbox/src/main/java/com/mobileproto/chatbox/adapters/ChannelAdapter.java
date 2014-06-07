@@ -25,10 +25,20 @@ public class ChannelAdapter extends ArrayAdapter<Channel> {
 
     private List<Channel> channels;
 
-    public ChannelAdapter(Context context, int resource) {
-        super(context, resource);
+    public ChannelAdapter(Context context) {
+        super(context, R.layout.channelitem_main);
         this.context = context;
         this.channels = ContentManager.getChannelsForUser(ContentManager.userId);
+    }
+
+    @Override
+    public int getCount() { //Inform the adapter how many items are to be shown
+        return this.channels.size();
+    }
+
+    @Override
+    public Channel getItem(int position) {//Inform the adapter how to get each item
+        return this.channels.get(position);
     }
 
     @Override
