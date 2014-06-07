@@ -1,9 +1,8 @@
 package com.mobileproto.chatbox.fragments;
 
-
+import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.mobileproto.chatbox.MainActivity;
 import com.mobileproto.chatbox.R;
 import com.mobileproto.chatbox.adapters.ChatAdapter;
+import com.mobileproto.chatbox.content.ContentManager;
 import com.mobileproto.chatbox.listeners.OnClickListeners;
 import com.mobileproto.chatbox.models.Chat;
 
@@ -52,7 +51,7 @@ public class ChatFragment extends Fragment {
         input.clearFocus();
 
         Button sendButton = (Button) v.findViewById(R.id.main_chat_button);
-        sendButton.setBackgroundResource(MainActivity.userColors.get(MainActivity.username));
+        sendButton.setBackgroundResource(ContentManager.userColors.get(ContentManager.username));
         sendButton.setOnClickListener(OnClickListeners.sendButtonListener(getActivity(), chatAdapter));
         return v;
     }

@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.mobileproto.chatbox.MainActivity;
 import com.mobileproto.chatbox.R;
+import com.mobileproto.chatbox.content.ContentManager;
 import com.mobileproto.chatbox.models.Chat;
 
 import java.text.SimpleDateFormat;
@@ -70,7 +71,7 @@ public class ChatAdapter extends ArrayAdapter {
         holder.body.setText(chat.body);
         holder.time.setText(formatTime(chat.time));
 
-        holder.background.setBackgroundResource(MainActivity.userColors.get(chat.sender));
+        holder.background.setBackgroundResource(ContentManager.userColors.get(chat.sender));
         //holder.picture.setImageDrawable(getProfileDrawable(chat.userId));
     }
 

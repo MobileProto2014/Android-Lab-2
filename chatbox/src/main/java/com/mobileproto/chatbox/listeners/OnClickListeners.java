@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.mobileproto.chatbox.MainActivity;
 import com.mobileproto.chatbox.R;
 import com.mobileproto.chatbox.adapters.ChatAdapter;
+import com.mobileproto.chatbox.content.ContentManager;
 import com.mobileproto.chatbox.models.Chat;
 
 /**
@@ -29,7 +30,7 @@ public class OnClickListeners {
                     Toast.makeText(activity, "You didn't type anything in!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                adapter.addChat(new Chat(MainActivity.username, input.getText().toString(), MainActivity.userId));
+                adapter.addChat(new Chat(ContentManager.username, input.getText().toString(), ContentManager.userId));
                 input.setText("");
             };
         };
@@ -49,12 +50,12 @@ public class OnClickListeners {
                             Toast.makeText(activity, "Your username can't be blank!", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        MainActivity.username = newName;
+                        ContentManager.username = newName;
                         Toast.makeText(activity, "Your username is now " + newName, Toast.LENGTH_SHORT).show();
-                        if (!MainActivity.userColors.containsKey(newName)){
-                            MainActivity.addNewUser(newName);
+                        if (!ContentManager.userColors.containsKey(newName)){
+                            ContentManager.addNewUser(newName);
                         }
-                        activity.findViewById(R.id.main_chat_button).setBackgroundResource(MainActivity.userColors.get(MainActivity.username));
+                        activity.findViewById(R.id.main_chat_button).setBackgroundResource(ContentManager.getSelfUserColor());
                         dialogInterface.dismiss();
                     }
                 })

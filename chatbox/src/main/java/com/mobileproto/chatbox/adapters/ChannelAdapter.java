@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import com.mobileproto.chatbox.MainActivity;
+import com.mobileproto.chatbox.content.ContentManager;
 import com.mobileproto.chatbox.models.Channel;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public class ChannelAdapter extends ArrayAdapter<Channel> {
         super(context, resource);
         this.context = context;
         this.resource = resource;
-        this.channels = MainActivity.getChannelsForUser(MainActivity.userId);
+        this.channels = ContentManager.getChannelsForUser(ContentManager.userId);
     }
 
     @Override

@@ -1,20 +1,7 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusableInTouchMode="true"
-    tools:context="com.mobileproto.myapplication2.chatbox.MainActivity">
-
-    <fragment
-        android:id="@+id/main_home_fragment"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:name="com.mobileproto.chatbox.fragments.HomeFragment" />
-
-    <fragment
-        android:id="@+id/main_channel_fragment"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:name="com.mobileproto.chatbox.fragments.ChatFragment" />
-
-</RelativeLayout>
+    tools:context=".MainActivity"
+    tools:ignore="MergeRootFrame" />
