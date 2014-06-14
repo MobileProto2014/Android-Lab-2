@@ -1,10 +1,13 @@
 package com.mobileproto.chatbox.models;
 
+import java.io.Serializable;
+
 /**
  * Created by clee2 on 5/31/2014.
  */
-public class Channel {
+public class Channel implements Comparable, Serializable{
     private String id, name;
+    private Chat lastChat;
     private long lastUpdated, timeCreated;
 
     public Channel(String id, String name){
@@ -12,19 +15,56 @@ public class Channel {
         this.name = name;
     }
 
-    public String getId(){
-        return this.id;
+    /**
+     * Getters
+     */
+    public Chat getLastChat() {
+        return lastChat;
     }
 
-    public String getName(){
-        return this.name;
+    public long getLastUpdated() {
+        return lastUpdated;
     }
 
-//    public void setId(String newId){
-//        this.id = newId;
-//    }
+    public long getTimeCreated() {
+        return timeCreated;
+    }
 
-    public void setName(String newName){
-        this.name = newName;
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Setters
+     */
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setLastChat(Chat lastChat) {
+        this.lastChat = lastChat;
+    }
+
+    public void setLastUpdated(long lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTimeCreated(long timeCreated) {
+        this.timeCreated = timeCreated;
+    }
+
+
+
+    @Override
+    public int compareTo(Object o) {
+        return ((Channel)o).getLastUpdated() < getLastUpdated()?1:0;
     }
 }

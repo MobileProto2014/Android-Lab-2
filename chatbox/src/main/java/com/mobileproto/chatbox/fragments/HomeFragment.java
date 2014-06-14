@@ -12,7 +12,6 @@ import android.widget.ListView;
 import com.mobileproto.chatbox.MainActivity;
 import com.mobileproto.chatbox.R;
 import com.mobileproto.chatbox.adapters.ChannelAdapter;
-import com.mobileproto.chatbox.models.Channel;
 
 /**
  * Created by clee2 on 6/1/2014.
